@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<requirements_specification>
+  <metadata>
+    <project_name></project_name>
+    <version></version>
+    <creation_date></creation_date>
+    <last_modified></last_modified>
+    <author></author>
+    <status></status>
+  </metadata>
+
+  <project_overview>
+    <purpose></purpose>
+    <scope></scope>
+    <objectives>
+      <objective id="" priority=""></objective>
+    </objectives>
+    <constraints>
+      <constraint type="" description=""></constraint>
+    </constraints>
+    <assumptions>
+      <assumption id="" description=""></assumption>
+    </assumptions>
+  </project_overview>
+
+  <stakeholders>
+    <stakeholder>
+      <name></name>
+      <role></role>
+      <responsibilities></responsibilities>
+      <contact_info></contact_info>
+    </stakeholder>
+  </stakeholders>
+
+  <business_requirements>
+    <business_rule id="" priority="">
+      <title></title>
+      <description></description>
+      <rationale></rationale>
+      <acceptance_criteria></acceptance_criteria>
+    </business_rule>
+  </business_requirements>
+
+  <functional_requirements>
+    <requirement id="" priority="" category="">
+      <title></title>
+      <description></description>
+      <user_story></user_story>
+      <acceptance_criteria>
+        <criterion id=""></criterion>
+      </acceptance_criteria>
+      <dependencies>
+        <dependency ref_id=""></dependency>
+      </dependencies>
+    </requirement>
+  </functional_requirements>
+
+  <non_functional_requirements>
+    <performance>
+      <requirement id="" metric="" target_value=""></requirement>
+    </performance>
+    <security>
+      <requirement id="" type="" description=""></requirement>
+    </security>
+    <usability>
+      <requirement id="" description=""></requirement>
+    </usability>
+    <reliability>
+      <requirement id="" metric="" target_value=""></requirement>
+    </reliability>
+    <scalability>
+      <requirement id="" description=""></requirement>
+    </scalability>
+    <compatibility>
+      <requirement id="" platform="" description=""></requirement>
+    </compatibility>
+  </non_functional_requirements>
+
+  <data_requirements>
+    <entity id="">
+      <name></name>
+      <description></description>
+      <attributes>
+        <attribute name="" type="" required="" description=""></attribute>
+      </attributes>
+      <relationships>
+        <relationship target_entity="" type="" description=""></relationship>
+      </relationships>
+    </entity>
+  </data_requirements>
+
+  <external_interfaces>
+    <interface id="" type="">
+      <name></name>
+      <description></description>
+      <data_format></data_format>
+      <communication_protocol></communication_protocol>
+      <frequency></frequency>
+    </interface>
+  </external_interfaces>
+
+  <user_interfaces>
+    <screen id="">
+      <name></name>
+      <description></description>
+      <user_types></user_types>
+      <navigation></navigation>
+      <elements>
+        <element type="" name="" description=""></element>
+      </elements>
+    </screen>
+  </user_interfaces>
+
+  <validation_rules>
+    <validation_rule id="">
+      <requirement_refs>
+        <ref id=""></ref>
+      </requirement_refs>
+      <validation_type></validation_type>
+      <validation_method></validation_method>
+      <validation_pattern></validation_pattern>
+      <expected_result></expected_result>
+      <error_message></error_message>
+    </validation_rule>
+  </validation_rules>
+
+  <glossary>
+    <term>
+      <name></name>
+      <definition></definition>
+    </term>
+  </glossary>
+</requirements_specification>

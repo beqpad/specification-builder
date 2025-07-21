@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<basic_design_specification>
+  <metadata>
+    <project_name></project_name>
+    <version></version>
+    <creation_date></creation_date>
+    <last_modified></last_modified>
+    <author></author>
+    <status></status>
+    <previous_phase_reference></previous_phase_reference>
+    <previous_phase_version></previous_phase_version>
+  </metadata>
+
+  <system_overview>
+    <purpose></purpose>
+    <scope></scope>
+    <design_principles>
+      <principle id="" description=""></principle>
+    </design_principles>
+    <quality_attributes>
+      <attribute name="" target="" rationale=""></attribute>
+    </quality_attributes>
+  </system_overview>
+
+  <system_architecture>
+    <architectural_style></architectural_style>
+    <components>
+      <component id="">
+        <name></name>
+        <description></description>
+        <responsibilities></responsibilities>
+        <interfaces>
+          <interface type="" description=""></interface>
+        </interfaces>
+        <dependencies>
+          <dependency component_id="" description=""></dependency>
+        </dependencies>
+      </component>
+    </components>
+    <deployment_view>
+      <node id="">
+        <name></name>
+        <type></type>
+        <components>
+          <component_ref id=""></component_ref>
+        </components>
+        <hardware_requirements></hardware_requirements>
+        <software_requirements></software_requirements>
+      </node>
+    </deployment_view>
+  </system_architecture>
+
+  <data_design>
+    <conceptual_model>
+      <entity id="">
+        <name></name>
+        <description></description>
+        <attributes>
+          <attribute name="" type="" constraints="" description=""></attribute>
+        </attributes>
+        <relationships>
+          <relationship target_entity="" cardinality="" type="" description=""></relationship>
+        </relationships>
+      </entity>
+    </conceptual_model>
+    <data_storage>
+      <database id="">
+        <name></name>
+        <type></type>
+        <description></description>
+        <tables>
+          <table name="" entity_ref="" description=""></table>
+        </tables>
+      </database>
+    </data_storage>
+    <data_flow>
+      <flow id="">
+        <source></source>
+        <destination></destination>
+        <data_elements></data_elements>
+        <processing_rules></processing_rules>
+      </flow>
+    </data_flow>
+  </data_design>
+
+  <interface_design>
+    <external_interfaces>
+      <interface id="">
+        <name></name>
+        <type></type>
+        <description></description>
+        <protocol></protocol>
+        <data_format></data_format>
+        <operations>
+          <operation name="" input="" output="" description=""></operation>
+        </operations>
+        <error_handling></error_handling>
+      </interface>
+    </external_interfaces>
+    <user_interface_design>
+      <screen id="">
+        <name></name>
+        <description></description>
+        <layout></layout>
+        <navigation_flow></navigation_flow>
+        <user_interactions>
+          <interaction trigger="" action="" response=""></interaction>
+        </user_interactions>
+        <validation_rules>
+          <validation_rule field="" validation_type="" validation_pattern="" error_message=""></validation_rule>
+        </validation_rules>
+      </screen>
+    </user_interface_design>
+  </interface_design>
+
+  <security_design>
+    <authentication>
+      <method type="" description=""></method>
+    </authentication>
+    <authorization>
+      <role name="" permissions=""></role>
+    </authorization>
+    <data_protection>
+      <mechanism type="" scope="" description=""></mechanism>
+    </data_protection>
+    <security_controls>
+      <control id="" type="" description="" implementation=""></control>
+    </security_controls>
+  </security_design>
+
+  <performance_design>
+    <performance_requirements>
+      <requirement id="" metric="" target="" rationale=""></requirement>
+    </performance_requirements>
+    <optimization_strategies>
+      <strategy component="" technique="" expected_improvement=""></strategy>
+    </optimization_strategies>
+    <scalability_considerations>
+      <consideration aspect="" approach="" limitations=""></consideration>
+    </scalability_considerations>
+  </performance_design>
+
+  <error_handling>
+    <error_categories>
+      <category name="" description="" handling_strategy=""></category>
+    </error_categories>
+    <exception_handling>
+      <exception type="" component="" handling_procedure=""></exception>
+    </exception_handling>
+    <logging_strategy>
+      <log_level level="" events="" format=""></log_level>
+    </logging_strategy>
+  </error_handling>
+
+  <integration_design>
+    <integration_points>
+      <point id="">
+        <name></name>
+        <external_system></external_system>
+        <integration_method></integration_method>
+        <data_exchange></data_exchange>
+        <error_handling></error_handling>
+      </point>
+    </integration_points>
+    <batch_processing>
+      <job id="">
+        <name></name>
+        <schedule></schedule>
+        <input_sources></input_sources>
+        <processing_steps></processing_steps>
+        <output_destinations></output_destinations>
+      </job>
+    </batch_processing>
+  </integration_design>
+
+  <operational_design>
+    <monitoring>
+      <metric name="" type="" threshold="" action=""></metric>
+    </monitoring>
+    <backup_recovery>
+      <strategy type="" frequency="" retention="" recovery_time=""></strategy>
+    </backup_recovery>
+    <maintenance>
+      <activity type="" frequency="" description=""></activity>
+    </maintenance>
+  </operational_design>
+
+  <design_decisions>
+    <decision id="">
+      <title></title>
+      <problem></problem>
+      <alternatives>
+        <alternative name="" pros="" cons=""></alternative>
+      </alternatives>
+      <chosen_solution></chosen_solution>
+      <rationale></rationale>
+      <consequences></consequences>
+    </decision>
+  </design_decisions>
+
+  <traceability_matrix>
+    <trace>
+      <requirement_id></requirement_id>
+      <design_elements>
+        <element type="" id="" name=""></element>
+      </design_elements>
+    </trace>
+  </traceability_matrix>
+</basic_design_specification>

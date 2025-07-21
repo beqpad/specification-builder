@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-Date)",
+      "Bash(mkdir:*)",
+      "Write",
+      "Bash(move:*)",
+      "Bash(mv:*)"
+    ],
+    "deny": []
+  }
+}

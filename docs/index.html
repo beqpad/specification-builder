@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>システム仕様書 - 目次</title>
+    <link rel="stylesheet" type="text/css" href="css/specifications.css">
+    <style>
+        .index-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .index-title {
+            font-size: 2.8em;
+            margin: 0 0 10px 0;
+            font-weight: 300;
+        }
+        
+        .index-subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .phase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .phase-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #007bff;
+        }
+        
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .phase-card.requirements { border-left-color: #28a745; }
+        .phase-card.basic-design { border-left-color: #007bff; }
+        .phase-card.detailed-design { border-left-color: #ffc107; }
+        .phase-card.development { border-left-color: #fd7e14; }
+        .phase-card.testing { border-left-color: #dc3545; }
+        
+        .phase-header {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .phase-number {
+            background: #007bff;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .phase-card.requirements .phase-number { background: #28a745; }
+        .phase-card.basic-design .phase-number { background: #007bff; }
+        .phase-card.detailed-design .phase-number { background: #ffc107; color: #212529; }
+        .phase-card.development .phase-number { background: #fd7e14; }
+        .phase-card.testing .phase-number { background: #dc3545; }
+        
+        .phase-title {
+            font-size: 1.4em;
+            margin: 0;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .phase-content {
+            padding: 20px;
+        }
+        
+        .phase-description {
+            color: #6c757d;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .phase-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        
+        .phase-features li {
+            padding: 5px 0;
+            color: #495057;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .phase-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .phase-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0056b3;
+            text-decoration: none;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #6c757d;
+            border: 1px solid #dee2e6;
+        }
+        
+        .btn-outline:hover {
+            background: #f8f9fa;
+            text-decoration: none;
+        }
+        
+        .tools-section {
+            background: #f8f9fa;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+        
+        .tools-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .tool-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .tool-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .tool-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .tool-description {
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .index-title {
+                font-size: 2.2em;
+            }
+            
+            .phase-grid {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+            
+            .phase-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="index-header">
+        <h1 class="index-title">システム仕様書</h1>
+        <p class="index-subtitle">ソフトウェア開発プロセス全体の包括的ドキュメンテーション</p>
+    </div>
+
+    <div class="phase-grid">
+        <!-- 要件定義フェーズ -->
+        <div class="phase-card requirements">
+            <div class="phase-header">
+                <div class="phase-number">フェーズ 1</div>
+                <h2 class="phase-title">要件定義</h2>
+            </div>
+            <div class="phase-content">
+                <p class="phase-description">
+                    プロジェクトの目的、範囲、機能要件、非機能要件を定義し、ステークホルダーとの合意を形成します。
+                </p>
+                <ul class="phase-features">
+                    <li>プロジェクト概要</li>
+                    <li>機能要件・非機能要件</li>
+                    <li>ステークホルダー分析</li>
+                    <li>データ要件</li>
+                    <li>外部インターフェース</li>
+                </ul>
+                <div class="phase-actions">
+                    <a href="#" class="btn btn-primary" onclick="viewRequirements()">仕様書を表示</a>
+                    <a href="../001-requirements-definition/" class="btn btn-outline">XMLファイル</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 基本設計フェーズ -->
+        <div class="phase-card basic-design">
+            <div class="phase-header">
+                <div class="phase-number">フェーズ 2</div>
+                <h2 class="phase-title">基本設計</h2>
+            </div>
+            <div class="phase-content">
+                <p class="phase-description">
+                    システム全体のアーキテクチャ、主要コンポーネント、データ設計、インターフェース設計を行います。
+                </p>
+                <ul class="phase-features">
+                    <li>システムアーキテクチャ</li>
+                    <li>コンポーネント設計</li>
+                    <li>データ設計</li>
+                    <li>セキュリティ設計</li>
+                    <li>パフォーマンス設計</li>
+                </ul>
+                <div class="phase-actions">
+                    <a href="#" class="btn btn-primary" onclick="viewBasicDesign()">仕様書を表示</a>
+                    <a href="../002-basic-design/" class="btn btn-outline">XMLファイル</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 詳細設計フェーズ -->
+        <div class="phase-card detailed-design">
+            <div class="phase-header">
+                <div class="phase-number">フェーズ 3</div>
+                <h2 class="phase-title">詳細設計</h2>
+            </div>
+            <div class="phase-content">
+                <p class="phase-description">
+                    実装レベルの詳細な設計、クラス設計、データベース物理設計、API設計を実施します。
+                </p>
+                <ul class="phase-features">
+                    <li>モジュール・クラス設計</li>
+                    <li>データベース詳細設計</li>
+                    <li>API詳細設計</li>
+                    <li>UI詳細設計</li>
+                    <li>セキュリティ実装</li>
+                </ul>
+                <div class="phase-actions">
+                    <a href="#" class="btn btn-primary" onclick="viewDetailedDesign()">仕様書を表示</a>
+                    <a href="../003-detailed-design/" class="btn btn-outline">XMLファイル</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 開発フェーズ -->
+        <div class="phase-card development">
+            <div class="phase-header">
+                <div class="phase-number">フェーズ 4</div>
+                <h2 class="phase-title">開発</h2>
+            </div>
+            <div class="phase-content">
+                <p class="phase-description">
+                    開発環境の構築、コーディング標準、実装手順、CI/CDパイプラインの構築を行います。
+                </p>
+                <ul class="phase-features">
+                    <li>開発環境構築</li>
+                    <li>コーディング標準</li>
+                    <li>実装手順</li>
+                    <li>CI/CDパイプライン</li>
+                    <li>デプロイメント自動化</li>
+                </ul>
+                <div class="phase-actions">
+                    <a href="#" class="btn btn-primary" onclick="viewDevelopment()">仕様書を表示</a>
+                    <a href="../004-development/" class="btn btn-outline">XMLファイル</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- テストフェーズ -->
+        <div class="phase-card testing">
+            <div class="phase-header">
+                <div class="phase-number">フェーズ 5</div>
+                <h2 class="phase-title">テスト</h2>
+            </div>
+            <div class="phase-content">
+                <p class="phase-description">
+                    包括的なテスト戦略、単体テスト、結合テスト、システムテスト、自動化の実装を行います。
+                </p>
+                <ul class="phase-features">
+                    <li>テスト戦略</li>
+                    <li>単体・結合テスト</li>
+                    <li>パフォーマンステスト</li>
+                    <li>セキュリティテスト</li>
+                    <li>テスト自動化</li>
+                </ul>
+                <div class="phase-actions">
+                    <a href="#" class="btn btn-primary" onclick="viewTesting()">仕様書を表示</a>
+                    <a href="../005-testing/" class="btn btn-outline">XMLファイル</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tools-section">
+        <h2 class="tools-title">仕様書変換ツール</h2>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-icon">📄</div>
+                <h3 class="tool-title">XSLT変換</h3>
+                <p class="tool-description">XMLファイルをHTML形式で美しく表示</p>
+                <a href="xslt/" class="btn btn-outline">XSLTファイル一覧</a>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">🎨</div>
+                <h3 class="tool-title">スタイルシート</h3>
+                <p class="tool-description">統一されたデザインで読みやすい表示</p>
+                <a href="css/specifications.css" class="btn btn-outline">CSSファイル</a>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">📋</div>
+                <h3 class="tool-title">XMLテンプレート</h3>
+                <p class="tool-description">各フェーズの構造化テンプレート</p>
+                <a href="../" class="btn btn-outline">テンプレート一覧</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 システム仕様書プロジェクト - AI支援による自動化開発フレームワーク</p>
+        <p>最終更新: <span id="lastUpdate"></span></p>
+    </div>
+
+    <script>
+        // XMLファイルの読み込みとXSLT変換
+        function transformXML(xmlPath, xslPath, targetElementId) {
+            if (window.XMLHttpRequest) {
+                // 現代のブラウザ用
+                const xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET", xmlPath, false);
+                xmlhttp.send();
+                const xmlDoc = xmlhttp.responseXML;
+
+                const xslhttp = new XMLHttpRequest();
+                xslhttp.open("GET", xslPath, false);
+                xslhttp.send();
+                const xslDoc = xslhttp.responseXML;
+
+                if (window.XSLTProcessor) {
+                    const xsltProcessor = new XSLTProcessor();
+                    xsltProcessor.importStylesheet(xslDoc);
+                    const resultDocument = xsltProcessor.transformToFragment(xmlDoc, document);
+                    
+                    // 新しいウィンドウで表示
+                    const newWindow = window.open('', '_blank');
+                    newWindow.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>仕様書</title></head><body></body></html>');
+                    newWindow.document.body.appendChild(resultDocument);
+                } else {
+                    alert('お使いのブラウザはXSLT変換をサポートしていません。XMLファイルを直接ダウンロードしてご確認ください。');
+                }
+            }
+        }
+
+        function viewRequirements() {
+            transformXML('../001-requirements-definition/001-requirements-template.xml', 'xslt/requirements-template.xsl');
+        }
+
+        function viewBasicDesign() {
+            transformXML('../002-basic-design/001-basic-design-template.xml', 'xslt/basic-design-template.xsl');
+        }
+
+        function viewDetailedDesign() {
+            transformXML('../003-detailed-design/001-detailed-design-template.xml', 'xslt/detailed-design-template.xsl');
+        }
+
+        function viewDevelopment() {
+            transformXML('../004-development/001-development-template.xml', 'xslt/development-template.xsl');
+        }
+
+        function viewTesting() {
+            transformXML('../005-testing/001-testing-template.xml', 'xslt/testing-template.xsl');
+        }
+
+        // 最終更新日の表示
+        document.getElementById('lastUpdate').textContent = new Date().toLocaleDateString('ja-JP');
+    </script>
+</body>
+</html>

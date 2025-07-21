@@ -1,0 +1,320 @@
+/* 仕様書表示用CSSスタイル */
+
+/* 基本設定 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* ヘッダー */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 8px 8px 0 0;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+.header .subtitle {
+    margin: 10px 0 0 0;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* メタデータ */
+.metadata {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-left: 4px solid #007bff;
+    margin: 20px;
+    border-radius: 4px;
+}
+
+.metadata h2 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 1.3em;
+}
+
+.metadata-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.metadata-item {
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+}
+
+.metadata-label {
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.9em;
+    display: block;
+}
+
+.metadata-value {
+    color: #007bff;
+    margin-top: 5px;
+}
+
+/* コンテンツエリア */
+.content {
+    padding: 30px;
+}
+
+/* セクション */
+.section {
+    margin-bottom: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.section-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.section-content {
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-top: none;
+}
+
+/* サブセクション */
+.subsection {
+    margin-bottom: 25px;
+    border-left: 3px solid #28a745;
+    padding-left: 20px;
+}
+
+.subsection-header {
+    color: #28a745;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* リスト */
+.item-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item {
+    background-color: #f8f9fa;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #6c757d;
+    position: relative;
+}
+
+.item.priority-high {
+    border-left-color: #dc3545;
+}
+
+.item.priority-medium {
+    border-left-color: #ffc107;
+}
+
+.item.priority-low {
+    border-left-color: #28a745;
+}
+
+.item-header {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+.item-id {
+    background-color: #6c757d;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin-right: 10px;
+}
+
+.item-content {
+    margin-top: 10px;
+}
+
+.item-description {
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+/* 属性表示 */
+.attributes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.attribute {
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    font-size: 0.9em;
+}
+
+.attribute-name {
+    font-weight: 600;
+    color: #495057;
+}
+
+.attribute-value {
+    color: #007bff;
+    margin-left: 5px;
+}
+
+/* テーブル */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: white;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.data-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+}
+
+.data-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* ナビゲーション */
+.navigation {
+    background-color: #f8f9fa;
+    padding: 15px 30px;
+    border-top: 1px solid #dee2e6;
+    border-radius: 0 0 8px 8px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link {
+    color: #007bff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+    background-color: #e9ecef;
+    text-decoration: none;
+}
+
+/* 空の要素の表示 */
+.empty-value {
+    color: #6c757d;
+    font-style: italic;
+}
+
+.empty-value:before {
+    content: "（未設定）";
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .header {
+        padding: 20px;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .metadata-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .attributes {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* 印刷用スタイル */
+@media print {
+    body {
+        background-color: white;
+        padding: 0;
+    }
+    
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    .header {
+        background: #333 !important;
+        -webkit-print-color-adjust: exact;
+    }
+    
+    .navigation {
+        display: none;
+    }
+}
